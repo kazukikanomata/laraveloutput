@@ -18,7 +18,6 @@
                             <div class="card-header">タスク追加・詳細</div>
                             <div class="card-body">
                                 [<a href="posts/create">追加</a>]<br>
-                                [<a href="posts/">詳細</a>]
                             </div>
                         </div>
                     </div>
@@ -44,15 +43,15 @@
                                                 @foreach ($tasks as $task)
                                                 <tr>
                                                     <td>{{$task->id}}</td>
-                                                    <td>{{$task->content}}</td>
+                                                    <td><a href="/posts/{{$task->id}}">{{$task->content}}</a></td>
                                                     <td>{{$task->due_time}}</td>
                                                     <td>{{$task->status}}</td>
                                                     <td>{{$task->time}}時間</td>
-                                                    <td><a href="posts/edit">編集️</a></td>
+                                                    <td><a href="posts/{{ $task->id }}/edit">編集️</a></td>
                                                     <td><a href="">削除️</a></td>
                                                 </tr>
                                             </tbody>
-                                            @endforeach
+                                                @endforeach
                                         </table>
                                     </div>
                                 </div>

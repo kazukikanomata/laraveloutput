@@ -26,9 +26,9 @@
                             <div class="form-group">
                                 <label for="status">状態</label>
                                 <select name="task[status]">
-                                      <option value="first">未</option>
-                                      <option value="second">進行中</option>
-                                      <option value="third">完了</option>
+                                      <option value="未" name="first">未</option>
+                                      <option value="進行中" name="second">進行中</option>
+                                      <option value="完了" name="third">完了</option>
                                 </select>
                             </div>
                             <div class="form-group">
