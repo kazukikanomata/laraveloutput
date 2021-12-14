@@ -10,41 +10,58 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
-            <h1>タスク追加</h1>
-            [<a href="posts/create">追加</a>]
-            <h1>カテゴリー名</h1>
-            <div class="tasks">
-                <div class="task">
-                    <table>
-                    @foreach ($tasks as $task)
-                        <thead>
-                            <tr>
-                                <th class="id"></th>
-                                <th class="content">タスクの内容</th>
-                                <th class="due_time">期限</th>
-                                <th class="status">状態</th>
-                                <th class="time">かかる時間</th>
-                                <th class="icon">編集</th>
-                                <th class="icon">削除</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{{$task->id}}</td>
-                                <td>{{$task->content}}</td>
-                                <td>{{$task->due_time}}</td>
-                                <td>{{$task->status}}</td>
-                                <td>{{$task->time}}</td>
-                                <td><a href="">🖊️</a></td>
-                                <td><a href="">🗑️</a></td>
-                            </tr>
-                        </tbody>
-                    @endforeach
-                    </table>
+        <main>
+            <div class="container">
+                <div class="row justify-center-center">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header">タスク追加・詳細</div>
+                            <div class="card-body">
+                                [<a href="posts/create">追加</a>]<br>
+                                [<a href="posts/">詳細</a>]
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">タスク</div>
+                            <div class="card-body">
+                                <div class="tasks">
+                                    <div class="task">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="id"></th>
+                                                    <th class="content">タスクの内容</th>
+                                                    <th class="due_time">期限</th>
+                                                    <th class="status">状態</th>
+                                                    <th class="time">かかる時間</th>
+                                                    <th class="icon"></th>
+                                                    <th class="icon"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($tasks as $task)
+                                                <tr>
+                                                    <td>{{$task->id}}</td>
+                                                    <td>{{$task->content}}</td>
+                                                    <td>{{$task->due_time}}</td>
+                                                    <td>{{$task->status}}</td>
+                                                    <td>{{$task->time}}時間</td>
+                                                    <td><a href="posts/edit">編集️</a></td>
+                                                    <td><a href="">削除️</a></td>
+                                                </tr>
+                                            </tbody>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
     </body>
 </html>
 @endsection
