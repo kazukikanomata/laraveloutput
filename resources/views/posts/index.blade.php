@@ -17,7 +17,7 @@
                         <div class="card">
                             <div class="card-header">タスク追加・詳細</div>
                             <div class="card-body">
-                                [<a href="posts/create">追加</a>]<br>
+                                <a href="posts/create">タスク追加</a><br>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                                                     <td>{{$task->status}}</td>
                                                     <td>{{$task->time}}時間</td>
                                                     <td><a href="posts/{{ $task->id }}/edit">編集️</a></td>
-                                                    <td><a href="">削除️</a></td>
+                                                    <td><a href="/">削除️</a></td>
                                                 </tr>
                                             </tbody>
                                                 @endforeach
@@ -63,4 +63,15 @@
         </main>
     </body>
 </html>
+<script>
+function deleteTask(e) {
+    'use strict';
+    if (confirm('本当に削除しますか？')){
+        document.getElementById('form_{{ $task->id }}').submit();
+    }
+}
+</script>
+
+
+
 @endsection

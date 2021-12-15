@@ -22,6 +22,7 @@ class CreateTasksTable extends Migration
             $table->integer('time');
             $table->string('content' , 200);
             $table->string('status');
+            $table->softDeletes();
         });
     }
 
@@ -32,6 +33,9 @@ class CreateTasksTable extends Migration
      */
     public function down()
     {
+        Schema::table('tasks', function (Blueprint $table) {
+        $table->dropSoftDeletes();
+        });
         Schema::dropIfExists('tasks');
     }
 }
