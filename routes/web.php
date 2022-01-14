@@ -17,7 +17,7 @@ Route::get('/posts/{task}', 'PostController@show');
 Route::post('/posts', 'PostController@store');
 Route::get('/posts/{task}/edit', 'PostController@edit');
 Route::put('/posts/{task}', 'PostController@update');
-Route::delete('/posts/{task}', 'PostController@delete')->name('task_remove');
+Route::delete('/posts/{task}', 'PostController@destory');
 
 
 

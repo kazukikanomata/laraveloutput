@@ -48,7 +48,13 @@
                                                     <td>{{$task->status}}</td>
                                                     <td>{{$task->time}}時間</td>
                                                     <td><a href="posts/{{ $task->id }}/edit">編集️</a></td>
-                                                    <td><a href="/">削除️</a></td>
+                                                    <td>
+                                                        <form method="post" action="{{ action('PostController@destory', $task->id) }}" id="delete_{{ $task->id}}" >
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger" onclick="return confirm('本当に削除しますか？');">削除</button>
+                                                        </form>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                                 @endforeach
@@ -63,15 +69,4 @@
         </main>
     </body>
 </html>
-<script>
-function deleteTask(e) {
-    'use strict';
-    if (confirm('本当に削除しますか？')){
-        document.getElementById('form_{{ $task->id }}').submit();
-    }
-}
-</script>
-
-
-
 @endsection

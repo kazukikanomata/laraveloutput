@@ -15,13 +15,13 @@
         <div class="catego-box catego-item1">
             <div class="catego-text">
                 <h3>NW</h3>
-                <a href="#">Read More</a>
+                <a href="posts/index">Read More</a>
             </div>
         </div>
         <div class="catego-box catego-item2">
             <div class="catego-text">
                 <h3>NP</h3>
-                <a href="#">Read More</a>
+                <a href="posts/index">Read More</a>
             </div>
         </div>
         <div class="catego-box catego-item3">

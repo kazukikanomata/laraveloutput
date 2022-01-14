@@ -40,9 +40,10 @@ class PostController extends Controller
         $task->fill($input_task)->save();
         return redirect('/posts/' . $task->id);
     }
-    public function delete(Task $task)
+    public function destory(Task $task)
     {
         $task->delete();
+        //$task->save();
         return redirect('/');
     }
 }
