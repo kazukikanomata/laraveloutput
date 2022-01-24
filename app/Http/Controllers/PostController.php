@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public function top()
+    {
+        return view('posts/top');    
+    }
+    public function select()
+    {
+        return view('posts/select');
+    }
     public function index(Task $task)
     {
         //tasksという変数名でtaskテーブルの全データを渡す
