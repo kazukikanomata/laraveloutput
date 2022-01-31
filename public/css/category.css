@@ -16,23 +16,24 @@
     background-position: center;
     margin-right: 1%;
     margin-bottom: 1%;
+    width: 100%
 }
 .catego-item2{
-    background-color: #FFCCCC;
+    background-image: url(https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
     background-size: cover;
     background-position: center;
     margin-bottom: 1%;
 }
 
 .catego-item3{
-    background-color: pink;
+    background-image: url(https://images.unsplash.com/photo-1614586125858-e695dd97d1b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1803&q=80);
     background-size: cover;
     background-position: center;
     margin-right: 1%;
 }
 
 .catego-item4{
-    background-color: red;
+    background-image: url(https://images.unsplash.com/photo-1559056324-2173a221d9b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80);
     background-size: cover;
     background-position: center;
 }

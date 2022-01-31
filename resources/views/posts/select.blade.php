@@ -14,26 +14,34 @@
     <div class="category">
         <div class="catego-box catego-item1">
             <div class="catego-text">
-                <h3>NW</h3>
-                <a href="posts/index">Read More</a>
+                <a href="{{ url('/tasks') }}" style="text-decoration: none;">
+                    <h3>NW</h3>
+                    <p>Use More</p>
+                </a>
             </div>
         </div>
         <div class="catego-box catego-item2">
             <div class="catego-text">
-                <h3>NP</h3>
-                <a href="posts/index">Read More</a>
+                <a href="{{ url('/tasks') }}" style="text-decoration: none;">
+                    <h3>NP</h3>
+                    <p>Use More</p>
+                </a>
             </div>
         </div>
         <div class="catego-box catego-item3">
             <div class="catego-text">
-                <h3>WW</h3>
-                <a href="#">Read More</a>
+                <a href="{{ url('/tasks') }}" style="text-decoration: none;">
+                    <h3>WW</h3>
+                    <p>Use More</p>
+                    </a>
             </div>
         </div>        
         <div class="catego-box catego-item4">
             <div class="catego-text">
-                <h3>WP</h3>
-                <a href="#">Read More</a>
+                <a href="{{ url('/tasks') }}" style="text-decoration: none;">
+                    <h3>WP</h3>
+                    <p>Use More</p>
+                </a>
             </div>
         </div>
     </div>
