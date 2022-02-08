@@ -40,14 +40,14 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($tasks as $task)
                                                 <tr>
+                                                    @foreach ($tasks as $task)
                                                     <td>{{$task->id}}</td>
                                                     <td><a href="/posts/{{$task->id}}">{{$task->content}}</a></td>
                                                     <td>{{$task->due_time}}</td>
                                                     <td>{{$task->status}}</td>
                                                     <td>{{$task->time}}時間</td>
-                                                    <td><a href="posts/{{ $task->id }}/edit">編集️</a></td>
+                                                    <td><a href="posts/{{ $task->id }}/edit" class="btn btn-success">編集️</a></td>
                                                     <td>
                                                         <form method="post" action="{{ action('PostController@destory', $task->id) }}" id="delete_{{ $task->id}}" >
                                                             @csrf

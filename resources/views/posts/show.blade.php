@@ -33,10 +33,10 @@
                                         <td>{{ $task->due_time }}</td>
                                         <td>{{ $task->status }}</td>
                                         <td>{{ $task->time }}時間</td>
-                                        <td>{{ $task->category_id }}</td>
-                                        <td><a href="/posts/{{ $task->id }}/edit">編集</a></td>
-                                        <td><a href="">削除️</a></td>
-                                        <a href="/">戻る</a>
+                                        <td>{{ $task->category->name }}</td>
+                                        <td><a href="/posts/{{ $task->id }}/edit" class="btn btn-success">編集</a></td>
+                                        <td><a href="" class="btn btn-danger">削除️</a></td>
+                                        <a href="/tasks" class="btn btn-secondary">戻る</a>
                                     </tr>
                                 </tbody>
                                 

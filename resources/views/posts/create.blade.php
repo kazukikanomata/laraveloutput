@@ -45,7 +45,7 @@
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-primary">送信</button>
-                                <a href="/" class="ml-2">戻る</a>
+                                <a href="/tasks" class="btn btn-danger">戻る</a>
                             </form>
                         </div>
                     </div>

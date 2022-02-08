@@ -10,7 +10,7 @@ class PostController extends Controller
 {
     public function top()
     {
-        return view('posts/top');    
+        return view('posts/top');
     }
     public function select()
     {
@@ -18,14 +18,13 @@ class PostController extends Controller
     }
     public function index(Task $task)
     {
-        //tasksという変数名でtaskテーブルの全データを渡す
         return view('posts/index')->with(['tasks' => $task->get()]);
     }
     public function show(Task $task)
     {
         return view('posts/show')->with(['task' => $task]);
     }
-    
+
     public function create(Category $category)
     {
         return view('posts/create')->with(['categories' => $category->get()]);

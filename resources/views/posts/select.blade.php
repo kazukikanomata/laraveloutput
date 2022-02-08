@@ -12,38 +12,38 @@
 </head>
 <body>
     <div class="category">
-        <div class="catego-box catego-item1">
-            <div class="catego-text">
-                <a href="{{ url('/tasks') }}" style="text-decoration: none;">
+        <a href="{{ url('/tasks') }}" style="text-decoration: none;">
+            <div class="catego-box catego-item1">
+                <div class="catego-text">
                     <h3>NW</h3>
                     <p>Use More</p>
-                </a>
+                </div>
             </div>
-        </div>
-        <div class="catego-box catego-item2">
-            <div class="catego-text">
-                <a href="{{ url('/tasks') }}" style="text-decoration: none;">
+        </a>
+        <a href="{{ url('/tasks') }}" style="text-decoration: none;">
+            <div class="catego-box catego-item2">
+                <div class="catego-text">
                     <h3>NP</h3>
                     <p>Use More</p>
-                </a>
+                </div>
             </div>
-        </div>
-        <div class="catego-box catego-item3">
-            <div class="catego-text">
-                <a href="{{ url('/tasks') }}" style="text-decoration: none;">
+        </a>
+        <a href="{{ url('/tasks') }}" style="text-decoration: none;">
+            <div class="catego-box catego-item3">
+                <div class="catego-text">
                     <h3>WW</h3>
                     <p>Use More</p>
-                    </a>
+                </div>
             </div>
-        </div>        
-        <div class="catego-box catego-item4">
-            <div class="catego-text">
-                <a href="{{ url('/tasks') }}" style="text-decoration: none;">
+        </a>
+        <a href="{{ url('/tasks') }}" style="text-decoration: none;">
+            <div class="catego-box catego-item4">
+                <div class="catego-text">
                     <h3>WP</h3>
                     <p>Use More</p>
-                </a>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 </body>
 </html>
