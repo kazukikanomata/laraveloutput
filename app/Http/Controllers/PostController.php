@@ -50,7 +50,6 @@ class PostController extends Controller
     public function destory(Task $task)
     {
         $task->delete();
-        //$task->save();
         return redirect('/');
     }
 }
