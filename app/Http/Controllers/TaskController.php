@@ -16,7 +16,7 @@ class TaskController extends Controller
      */
     public function index(Task $task)
     {
-        return view('posts/index')->with(['tasks' => $task->get()]);
+        return view('tasks/index')->with(['tasks' => $task->get()]);
     }
 
     /**
@@ -26,7 +26,7 @@ class TaskController extends Controller
      */
     public function create(Category $category)
     {
-         return view('posts/create')->with(['categories' => $category->get()]);
+         return view('tasks/create')->with(['categories' => $category->get()]);
     }
 
     /**
@@ -40,7 +40,7 @@ class TaskController extends Controller
         $input = $request['task'];
         $input += ['user_id' => $request->user()->id];
         $task->fill($input)->save();
-        return redirect('/posts/' . $task->id);
+        return redirect('/tasks/' . $task->id);
     }
 
     /**
@@ -51,7 +51,7 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
-        return view('posts/show')->with(['task' => $task]);
+        return view('tasks/show')->with(['task' => $task]);
     }
 
     /**
@@ -62,7 +62,7 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        return view('posts/edit')->with(['task' => $task]);
+        return view('tasks/edit')->with(['task' => $task]);
     }
 
     /**
@@ -76,7 +76,7 @@ class TaskController extends Controller
     {
         $input_task = $request['task'];
         $task->fill($input_task)->save();
-        return redirect('/posts/' . $task->id);
+        return redirect('/tasks/' . $task->id);
     }
 
     /**
@@ -88,6 +88,6 @@ class TaskController extends Controller
     public function destroy(Task $task)
     {
         $task->delete();
-        return redirect('/');
+        return redirect('/tasks');
     }
 }

@@ -34,33 +34,21 @@
                                         <td>{{ $task->status }}</td>
                                         <td>{{ $task->time }}時間</td>
                                         <td>{{ $task->category->name?? '不明'}}</td>
-                                        <td><a href="/posts/{{ $task->id }}/edit" class="btn btn-success">編集</a></td>
-                                        <td><a href="" class="btn btn-danger">削除️</a></td>
+                                        <td><a href="/tasks/{{ $task->id }}/edit" class="btn btn-success">編集</a></td>
+                                        <td>
+                                            <form method="post" action="{{ action('TaskController@destory', $task->id) }}" id="delete_{{ $task->id }}" >
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger" onclick="return confirm('本当に削除しますか？');">削除</button>
+                                            </form>
+                                        </td>
                                         <a href="/tasks" class="btn btn-secondary">戻る</a>
                                     </tr>
                                 </tbody>
-                                
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-            <!--<p class="delete">　削除まだ途中-->　
-            <!--    <form action"/posts/{{ $task->id }}" id="form_{{ $task->id }}" method="post">-->
-            <!--    @csrf-->
-            <!--    @method('DELETE')-->
-                
-            <!--    </form>-->
-            <!--</p>-->
-        <script>
-function deleteTask(e) {
-    'use strict';
-    if (confirm('本当に削除しますか？')){
-        document.getElementById('form_{{ $task->id }}').submit();
-    }
-}
-
-</script>
     </body>
