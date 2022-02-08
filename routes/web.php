@@ -15,6 +15,7 @@ Route::get('/','PostController@top');
 Route::get('/select','PostController@select');
 Route::get('/tasks', 'PostController@index');
 Route::resource('posts','PostController', ['except'=>['delete']]);
+Route::resource('tasks', 'TaskController');
 //Route::get('posts/create', 'PostController@create');
 //Route::get('/posts/{task}', 'PostController@show');
 //Route::post('/posts', 'PostController@store');
