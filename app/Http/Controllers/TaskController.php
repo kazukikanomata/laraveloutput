@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Task;
-use App\Category;
+use App\Models\Task;
+use App\Models\Category;
 
 use Illuminate\Http\Request;
 

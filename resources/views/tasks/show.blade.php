@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Posts</title>
+        <title>Tasks</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="/css/app.css">
@@ -33,7 +33,7 @@
                                         <td>{{ $task->due_time }}</td>
                                         <td>{{ $task->status }}</td>
                                         <td>{{ $task->time }}時間</td>
-                                        <td>{{ $task->category->name?? '不明'}}</td>
+                                        <td>{{ $task->id}}</td>
                                         <td><a href="/tasks/{{ $task->id }}/edit" class="btn btn-success">編集</a></td>
                                         <td>
                                             <form method="post" action="{{ action('TaskController@destory', $task->id) }}" id="delete_{{ $task->id }}" >
