@@ -33,7 +33,7 @@
                                         <td>{{ $task->due_time }}</td>
                                         <td>{{ $task->status }}</td>
                                         <td>{{ $task->time }}時間</td>
-                                        <td>{{ $task->id}}</td>
+                                        <td>{{ $task->category_id}}</td>
                                         <td><a href="/tasks/{{ $task->id }}/edit" class="btn btn-success">編集</a></td>
                                         <td>
                                             <form method="post" action="{{ action('TaskController@destory', $task->id) }}" id="delete_{{ $task->id }}" >

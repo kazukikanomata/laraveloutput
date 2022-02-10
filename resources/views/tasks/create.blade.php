@@ -14,7 +14,7 @@
                     <div class="card">
                         <div class="card-header">タスクを追加する</div>
                         <div class="card-body">
-                            <form action="/posts" method="POST">
+                            <form action="/tasks" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <p>タスクの内容</p>
