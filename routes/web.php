@@ -12,10 +12,12 @@
 */
 //　ホーム画面
 Route::get('/','TopController@index');
-Route::get('/select','CategoryController@index');
-Route::resource('tasks', 'TaskController',['except'=>['delete']]);
-Route::delete('/tasks/{task}', 'TaskController@destory');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => 'auth'] , function(){
+Route::get('/select','CategoryController@index');
+Route::resource('tasks', 'TaskController',['except'=>['delete']]);
+Route::delete('/tasks/{task}', 'TaskController@destory');
+});
