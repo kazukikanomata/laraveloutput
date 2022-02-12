@@ -16,7 +16,8 @@ class TaskController extends Controller
      */
     public function index(Task $task)
     {
-        return view('tasks/index')->with(['tasks' => $task->get()]);
+        $tasks = \App\Models\Task::select()->join('categories','categories.id','=','tasks.category_id')->where('name', 'NW')->get();
+        return view('tasks/index')->with(['tasks' => $task]);
     }
 
     /**

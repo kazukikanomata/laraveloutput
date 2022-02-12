@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="category">
-        <a href="{{ url('/tasks') }}" style="text-decoration: none;">
+        <a href="{{ url('select/{select}/tasks') }}" style="text-decoration: none;">
             <div class="catego-box catego-item1">
                 <div class="catego-text">
                     <h3>NW</h3>

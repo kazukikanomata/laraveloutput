@@ -18,6 +18,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'] , function(){
 Route::get('/select','CategoryController@index');
-Route::resource('tasks', 'TaskController',['except'=>['delete']]);
+Route::resource('/select.tasks', 'TaskController',['except'=>['delete']]);
 Route::delete('/tasks/{task}', 'TaskController@destory');
 });
