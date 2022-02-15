@@ -14,10 +14,13 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Task $task)
+    public function index()
     {
-        $tasks = \App\Models\Task::select()->join('categories','categories.id','=','tasks.category_id')->where('name', 'NW')->get();
-        return view('tasks/index')->with(['tasks' => $task]);
+        // タスクを全部取得
+        $tasks = Task::all();
+        return view('tasks/index')->with([
+            'tasks' => $tasks,
+            ]);
     }
 
     /**
