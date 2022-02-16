@@ -18,19 +18,20 @@ class TaskController extends Controller
     {
         switch($category){
             case 'NW':
-                $category = NW;
+                $category = 'NW';
                 break;
                 
             case 'NP':
-                $category = NP;
+                $category = 'NP';
                 break;
                 
             case 'WW':
-                $category = WW;
+                $category = 'WW';
                 break;
                 
+                
             case 'WP':
-                $category = WP;
+                $category = 'WP';
                 break;
         }
         // タスクを全部取得

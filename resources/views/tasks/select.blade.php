@@ -12,6 +12,7 @@
 </head>
 <body>
     <div class="category">
+        @foreach($categories as $category)
         <a href="{{ route('/category/{category}/',['category'=> $category->id]) }}" style="text-decoration: none;">
             <div class="catego-box catego-item1">
                 <div class="catego-text">
@@ -20,6 +21,7 @@
                 </div>
             </div>
         </a>
+        @endforeach
         <a href="{{ route('/category/{category}/',['category'=> $category->id]) }}" style="text-decoration: none;">
             <div class="catego-box catego-item2">
                 <div class="catego-text">

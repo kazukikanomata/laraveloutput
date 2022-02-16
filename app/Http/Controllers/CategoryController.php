@@ -10,6 +10,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return view('tasks/select');
+        $categories = Category::all();
+        return view('tasks/select')->with(['categories'-> $categories]);
     }
 }
