@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="category">
-        <a href="{{ url('/select/{select}/tasks') }}" style="text-decoration: none;">
+        <a href="{{ route('/category/{category}/',['category'=> $category->id]) }}" style="text-decoration: none;">
             <div class="catego-box catego-item1">
                 <div class="catego-text">
                     <h3>NW</h3>
@@ -20,7 +20,7 @@
                 </div>
             </div>
         </a>
-        <a href="{{ url('/tasks') }}" style="text-decoration: none;">
+        <a href="{{ route('/category/{category}/',['category'=> $category->id]) }}" style="text-decoration: none;">
             <div class="catego-box catego-item2">
                 <div class="catego-text">
                     <h3>NP</h3>
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </a>
-        <a href="{{ url('/tasks') }}" style="text-decoration: none;">
+        <a href="{{ route('/category/{category}/',['category'=> $category->id]) }}" style="text-decoration: none;">
             <div class="catego-box catego-item3">
                 <div class="catego-text">
                     <h3>WW</h3>
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </a>
-        <a href="{{ url('/tasks') }}" style="text-decoration: none;">
+        <a href="{{ route('/category/{category}/',['category'=> $category->id]) }}" style="text-decoration: none;">
             <div class="catego-box catego-item4">
                 <div class="catego-text">
                     <h3>WP</h3>

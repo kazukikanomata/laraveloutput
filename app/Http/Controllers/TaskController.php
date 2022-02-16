@@ -14,13 +14,29 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($category)
     {
+        switch($category){
+            case 'NW':
+                $category = NW;
+                break;
+                
+            case 'NP':
+                $category = NP;
+                break;
+                
+            case 'WW':
+                $category = WW;
+                break;
+                
+            case 'WP':
+                $category = WP;
+                break;
+        }
         // タスクを全部取得
         $tasks = Task::all();
-        return view('tasks/index')->with([
-            'tasks' => $tasks,
-            ]);
+        return view('tasks/index')->with(['tasks' => $tasks,
+        'category'=> $category]);
     }
 
     /**
@@ -81,6 +97,23 @@ class TaskController extends Controller
         $input_task = $request['task'];
         $task->fill($input_task)->save();
         return redirect('/tasks/' . $task->id);
+    }
+    
+    public function category(Request $request, $category)
+    {
+        $request->validate([
+        // categoriesテーブルにnameのカラム名があるか確認
+            'category'=>'exists:categories,name'
+        ]);
+        
+        $category = Category::where('name' , $request->get('category'))->first();
+        // $categoryに値が存在しているなら
+        if($category !== null){
+            return view('tasks.index')->with('tasks' , $category->tasks);
+        } else {
+            return \App::abort(404);    
+        }
+        
     }
 
     /**

@@ -42,7 +42,7 @@
                                                 <tr>
                                                     @foreach ($tasks as $task)
                                                     <td>{{ $task->id }}</td>
-                                                    <td><a href="/tasks/{{ $task->id }}">{{ $task->content }}</a></td>
+                                                    <td><a href="select/{select}/tasks/{{ $task->id }}">{{ $task->content }}</a></td>
                                                     <td>{{ $task->due_time }}</td>
                                                     <td>{{ $task->status }}</td>
                                                     <td>{{ $task->time }}時間</td>
