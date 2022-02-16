@@ -11,7 +11,7 @@
     <body>
         <div class="text-center">
             <h2>Focus</h2>
-            <a href="{{ route('/select') }}" class="btn btn-primary">使ってみる</a>
+            <a href="{{ url('/select') }}" class="btn btn-primary">使ってみる</a>
         </div>
     </body>
 </html>
