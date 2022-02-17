@@ -11,6 +11,6 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('tasks/select')->with(['categories'-> $categories]);
+        return view('tasks/select')->with(['categories'-> $categories ]);
     }
 }

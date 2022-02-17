@@ -110,11 +110,13 @@ class TaskController extends Controller
         $category = Category::where('name' , $request->get('category'))->first();
         // $categoryに値が存在しているなら
         if($category !== null){
-            return view('tasks.index')->with('tasks' , $category->tasks);
+            return view('tasks.index')->with('name', 'NW')
+            ->with('name', 'NP')
+            ->with('name', 'WW')
+            ->with('name', 'WP');
         } else {
             return \App::abort(404);    
-        }
-        
+        };
     }
 
     /**

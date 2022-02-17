@@ -26,7 +26,7 @@ Route::get('/select','CategoryController@index');
 
 Route::resource('/tasks', 'TaskController',['except'=>['delete']]);
 
-Route::get('/{category}/','TaskController@category');
+Route::get('/category/{category}/','TaskController@category');
 
 Route::delete('/tasks/{task}', 'TaskController@destory');
 
