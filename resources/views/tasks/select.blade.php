@@ -13,39 +13,15 @@
 <body>
     <div class="category">
         @foreach($categories as $category)
-        <a href="{{ route('/category/{category}/',['category'=> $category->id]) }}" style="text-decoration: none;">
+        <a href="{{ route('categories.show',['category'=> $category->name]) }}" style="text-decoration: none;">
             <div class="catego-box catego-item1">
                 <div class="catego-text">
-                    <h3>NW</h3>
+                    <h3>{{ $category->name }}</h3>
                     <p>Use More</p>
                 </div>
             </div>
         </a>
         @endforeach
-        <a href="{{ route('/category/{category}/',['category'=> $category->id]) }}" style="text-decoration: none;">
-            <div class="catego-box catego-item2">
-                <div class="catego-text">
-                    <h3>NP</h3>
-                    <p>Use More</p>
-                </div>
-            </div>
-        </a>
-        <a href="{{ route('/category/{category}/',['category'=> $category->id]) }}" style="text-decoration: none;">
-            <div class="catego-box catego-item3">
-                <div class="catego-text">
-                    <h3>WW</h3>
-                    <p>Use More</p>
-                </div>
-            </div>
-        </a>
-        <a href="{{ route('/category/{category}/',['category'=> $category->id]) }}" style="text-decoration: none;">
-            <div class="catego-box catego-item4">
-                <div class="catego-text">
-                    <h3>WP</h3>
-                    <p>Use More</p>
-                </div>
-            </div>
-        </a>
     </div>
 </body>
 </html>

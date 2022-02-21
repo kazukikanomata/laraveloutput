@@ -14,31 +14,31 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($category)
-    {
-        switch($category){
-            case 'NW':
-                $category = 'NW';
-                break;
+    // public function index($category)
+    // {
+    //     switch($category){
+    //         case 'NW':
+    //             $category = 'NW';
+    //             break;
                 
-            case 'NP':
-                $category = 'NP';
-                break;
+    //         case 'NP':
+    //             $category = 'NP';
+    //             break;
                 
-            case 'WW':
-                $category = 'WW';
-                break;
+    //         case 'WW':
+    //             $category = 'WW';
+    //             break;
                 
                 
-            case 'WP':
-                $category = 'WP';
-                break;
-        }
-        // タスクを全部取得
-        $tasks = Task::all();
-        return view('tasks/index')->with(['tasks' => $tasks,
-        'category'=> $category]);
-    }
+    //         case 'WP':
+    //             $category = 'WP';
+    //             break;
+    //     }
+    //     // タスクを全部取得
+    //     $tasks = Task::all();
+    //     return view('tasks/index')->with(['tasks' => $tasks,
+    //     'category'=> $category]);
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -100,24 +100,24 @@ class TaskController extends Controller
         return redirect('/tasks/' . $task->id);
     }
     
-    public function category(Request $request, $category)
-    {
-        $request->validate([
-        // categoriesテーブルにnameのカラム名があるか確認
-            'category'=>'exists:categories,name'
-        ]);
+    // public function category(Request $request, $category)
+    // {
+    //     $request->validate([
+    //     // categoriesテーブルにnameのカラム名があるか確認
+    //         'category'=>'exists:categories,name'
+    //     ]);
         
-        $category = Category::where('name' , $request->get('category'))->first();
-        // $categoryに値が存在しているなら
-        if($category !== null){
-            return view('tasks.index')->with('name', 'NW')
-            ->with('name', 'NP')
-            ->with('name', 'WW')
-            ->with('name', 'WP');
-        } else {
-            return \App::abort(404);    
-        };
-    }
+    //     $category = Category::where('name' , $request->get('category'))->first();
+    //     // $categoryに値が存在しているなら
+    //     if($category !== null){
+    //         return view('tasks.index')->with('name', 'NW')
+    //         ->with('name', 'NP')
+    //         ->with('name', 'WW')
+    //         ->with('name', 'WP');
+    //     } else {
+    //         return \App::abort(404);    
+    //     };
+    // }
 
     /**
      * Remove the specified resource from storage.

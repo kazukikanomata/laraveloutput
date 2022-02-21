@@ -17,16 +17,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // バナーが表示されているページ
-Route::get('/select','CategoryController@index');
-
-
-
-
+Route::get('/categories','CategoryController@index')->name('categories.index');
+// 選択されたカテゴリーが表示されているページ
+Route::get('/categories/{category}','CategoryController@show')->name('categories.show');
 
 
 Route::resource('/tasks', 'TaskController',['except'=>['delete']]);
-
-Route::get('/category/{category}/','TaskController@category');
-
 Route::delete('/tasks/{task}', 'TaskController@destory');
 
