@@ -29,16 +29,10 @@ class TaskController extends Controller
     //             $category = 'WW';
     //             break;
                 
-                
     //         case 'WP':
     //             $category = 'WP';
     //             break;
     //     }
-    //     // タスクを全部取得
-    //     $tasks = Task::all();
-    //     return view('tasks/index')->with(['tasks' => $tasks,
-    //     'category'=> $category]);
-    // }
 
     /**
      * Show the form for creating a new resource.
