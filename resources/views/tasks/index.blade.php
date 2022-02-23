@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card">
-                            <div class="card-header">タスク</div>
+                            <div class="card-header">タスク：{{$category}}</div>
                             <div class="card-body">
                                 <div class="tasks">
                                     <div class="task">
@@ -39,14 +39,18 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach ($tasks as $task)
                                                 <tr>
-                                                    @foreach ($tasks as $task)
                                                     <td>{{ $task->id }}</td>
-                                                    <td><a href="select/{select}/tasks/{{ $task->id }}">{{ $task->content }}</a></td>
+                                                    <td>
+                                                        <a href ="{{ route('tasks.show', ['category'=> $category,'task' => $task->id]) }}">{{ $task->content }}</a>
+                                                    </td>
                                                     <td>{{ $task->due_time }}</td>
                                                     <td>{{ $task->status }}</td>
                                                     <td>{{ $task->time }}時間</td>
-                                                    <td><a href="tasks/{{ $task->id }}/edit" class="btn btn-success">編集️</a></td>
+                                                    <td>
+                                                        <a href ="tasks/{{ $task->id }}/edit" class="btn btn-success">編集️</a>
+                                                    </td>
                                                     <td>
                                                         <form method="post" action="{{ action('TaskController@destory', $task->id) }}" id="delete_{{ $task->id }}" >
                                                             @csrf
@@ -55,8 +59,9 @@
                                                         </form>
                                                     </td>
                                                 </tr>
-                                            </tbody>
                                                 @endforeach
+                                            </tbody>
+                                                
                                         </table>
                                     </div>
                                 </div>

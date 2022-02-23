@@ -9,36 +9,6 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    // public function index($category)
-    // {
-    //     switch($category){
-    //         case 'NW':
-    //             $category = 'NW';
-    //             break;
-                
-    //         case 'NP':
-    //             $category = 'NP';
-    //             break;
-                
-    //         case 'WW':
-    //             $category = 'WW';
-    //             break;
-                
-    //         case 'WP':
-    //             $category = 'WP';
-    //             break;
-    //     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create(Category $category)
     {
          return view('tasks/create')->with(['categories' => $category->get()]);
@@ -64,9 +34,13 @@ class TaskController extends Controller
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function show(Task $task)
+    public function show(Request $request, $category, $task)
     {
-        return view('tasks/show')->with(['task' => $task]);
+        // ルートパラメータである$categoryと、クエリパラメータを受け取るための$requestを書きます。
+        // リクエストされたものをcategoryに代入し、新しく$categoryをつくる。
+        $category = $request->category;
+        $task = Task::find($task);
+        return view('tasks/show')->with(['category'=> $category,'task' => $task]);
     }
 
     /**
