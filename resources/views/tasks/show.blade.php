@@ -42,7 +42,7 @@
                                                 <button type="submit" class="btn btn-danger" onclick="return confirm('本当に削除しますか？');">削除</button>
                                             </form>
                                         </td>
-                                        <a href="/" class="btn btn-secondary">戻る</a>
+                                        <button type="submit" onClick="history.back()" class="btn btn-secondary">戻る</button>
                                     </tr>
                                 </tbody>
                             </table>

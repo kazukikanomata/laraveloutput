@@ -13,7 +13,6 @@ class TaskController extends Controller
     {
          return view('tasks/create')->with(['categories' => $category->get()]);
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -25,7 +24,7 @@ class TaskController extends Controller
         $input = $request['task'];
         $input += ['user_id' => $request->user()->id];
         $task->fill($input)->save();
-        return redirect('/tasks/' . $task->id);
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -49,9 +48,9 @@ class TaskController extends Controller
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function edit(Task $task)
+    public function edit(Request $request , $category ,Task $task)
     {
-        return view('tasks/edit')->with(['task' => $task]);
+        return view('tasks/edit')->with(['category' => $category,'task' => $task]);
     }
 
     /**
@@ -67,35 +66,15 @@ class TaskController extends Controller
         $task->fill($input_task)->save();
         return redirect('/tasks/' . $task->id);
     }
-    
-    // public function category(Request $request, $category)
-    // {
-    //     $request->validate([
-    //     // categoriesテーブルにnameのカラム名があるか確認
-    //         'category'=>'exists:categories,name'
-    //     ]);
-        
-    //     $category = Category::where('name' , $request->get('category'))->first();
-    //     // $categoryに値が存在しているなら
-    //     if($category !== null){
-    //         return view('tasks.index')->with('name', 'NW')
-    //         ->with('name', 'NP')
-    //         ->with('name', 'WW')
-    //         ->with('name', 'WP');
-    //     } else {
-    //         return \App::abort(404);    
-    //     };
-    // }
-
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Task $task)
+    public function destory(Task $task)
     {
         $task->delete();
-        return redirect('/tasks');
+        return redirect()->route('categories.index');
     }
 }

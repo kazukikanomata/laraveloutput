@@ -16,7 +16,7 @@
                         <div class="card">
                             <div class="card-header">タスク追加・詳細</div>
                             <div class="card-body">
-                                <a href="tasks/create">タスク追加</a><br>
+                                <a href="{{ route('tasks.create') }}">タスク追加</a><br>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                                                     <td>{{ $task->status }}</td>
                                                     <td>{{ $task->time }}時間</td>
                                                     <td>
-                                                        <a href ="tasks/{{ $task->id }}/edit" class="btn btn-success">編集️</a>
+                                                        <a href ="{{ route('tasks.edit', ['category'=> $category, 'task'=> $task->id ]) }}" class="btn btn-success">編集️</a>
                                                     </td>
                                                     <td>
                                                         <form method="post" action="{{ action('TaskController@destory', $task->id) }}" id="delete_{{ $task->id }}" >
@@ -61,7 +61,6 @@
                                                 </tr>
                                                 @endforeach
                                             </tbody>
-                                                
                                         </table>
                                     </div>
                                 </div>

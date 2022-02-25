@@ -20,11 +20,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/categories','CategoryController@index')->name('categories.index');
 // 選択されたカテゴリーが表示されているページ
 Route::get('/categories/{category}','CategoryController@show')->name('categories.show');
-
+// タスク作成画面
 Route::get('/tasks/create','TaskController@create')->name('tasks.create');
 
-Route::post('/categories/{category}/tasks/','TaskController@store')->name('tasks.store');
-
+Route::post('/tasks','TaskController@store')->name('tasks.store');
+//　選択されたカテゴリーの詳細ページ
 Route::get('/categories/{category}/tasks/{task}','TaskController@show')->name('tasks.show');
 
 Route::get('/categories/{category}/tasks/{task}/edit','TaskController@edit')->name('tasks.edit');

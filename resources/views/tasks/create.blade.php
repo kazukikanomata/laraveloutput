@@ -14,7 +14,7 @@
                     <div class="card">
                         <div class="card-header">タスクを追加する</div>
                         <div class="card-body">
-                            <form action="/tasks" method="POST">
+                            <form action="{{ route('tasks.store') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <p>タスクの内容</p>
@@ -45,7 +45,7 @@
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-primary">送信</button>
-                                <a href="/tasks" class="btn btn-danger">戻る</a>
+                                <a href="{{ route('categories.index') }}" class="btn btn-danger">戻る</a>
                             </form>
                         </div>
                     </div>

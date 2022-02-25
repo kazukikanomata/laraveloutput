@@ -26,7 +26,7 @@
                                 <input type="number" name="task[time]" placeholder="{{ $task->time }}"/><br>
                                 <input type="submit" value="更新">
                             </form>
-                            <div class="back"><a href="/tasks" class="btn btn-primary">戻る</a></div>
+                            <button type="submit" onClick="history.back()" class="btn btn-primary">戻る</button>
                         </div>        
                     </div>
                 </div>
