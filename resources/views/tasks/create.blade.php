@@ -10,23 +10,36 @@
     <body>
         <div class="container">
             <div class="row">
-                <div class="col col-md-offset-1 col-md-10">
+                <div class="col-md-10 mt-6">
                     <div class="card">
                         <div class="card-header">タスクを追加する</div>
+                        @if($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+                        @if(session('message'))
+                            <div class="alert alert-success">{{ session('message') }}</div>
+                        @endif
+                        
                         <div class="card-body">
                             <form action="{{ route('tasks.store') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <p>タスクの内容</p>
-                                    <textarea name="task[content]" placeholder="内容"></textarea>
+                                    <textarea name="content" placeholder="内容" class="form-control">{{old('content')}}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="due_time">期限</label>
-                                    <input type="date" name="task[due_time]" placeholder="いつまで？"/>
+                                    <input type="date" name="due_time" placeholder="いつまで？" class="form-control" value="{{old('due_time')}}"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="status">状態</label>
-                                    <select name="task[status]">
+                                    <select name="status" class="form-control">
                                           <option value="未" name="first">未</option>
                                           <option value="進行中" name="second">進行中</option>
                                           <option value="完了" name="third">完了</option>
@@ -34,11 +47,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="time">時間</label>
-                                    <input type="number" name="task[time]" placeholder="どれくらいかかる？"/>
+                                    <input type="number" name="time" value="{{old('time')}}" placeholder="どれくらいかかる？" class="form-control"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="category">Category</label>
-                                    <select name="task[category_id]">
+                                    <select name="category_id" class="form-control">
                                         @foreach($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach

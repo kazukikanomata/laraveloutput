@@ -22,12 +22,14 @@ Route::get('/categories','CategoryController@index')->name('categories.index');
 Route::get('/categories/{category}','CategoryController@show')->name('categories.show');
 // タスク作成画面
 Route::get('/tasks/create','TaskController@create')->name('tasks.create');
-
+// タスク保存画面
 Route::post('/tasks','TaskController@store')->name('tasks.store');
-//　選択されたカテゴリーの詳細ページ
+//　選択されたカテゴリーの個別詳細ページ
 Route::get('/categories/{category}/tasks/{task}','TaskController@show')->name('tasks.show');
-
-Route::get('/categories/{category}/tasks/{task}/edit','TaskController@edit')->name('tasks.edit');
-
+// タスク編集
+Route::get('/tasks/{task}/edit','TaskController@edit')->name('tasks.edit');
+// タスク更新
+Route::put('/tasks/{task}','TaskController@update')->name('tasks.update');
+// タスク削除
 Route::delete('/tasks/{task}', 'TaskController@destory')->name('tasks.destory');
 

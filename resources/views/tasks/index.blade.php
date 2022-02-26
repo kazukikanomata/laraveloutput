@@ -6,7 +6,6 @@
     <head>
         <meta charset="utf-8">
         <title>テーブル一覧</title>
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
         <main>
@@ -16,7 +15,6 @@
                         <div class="card">
                             <div class="card-header">タスク追加・詳細</div>
                             <div class="card-body">
-                                <a href="{{ route('tasks.create') }}">タスク追加</a><br>
                                 @foreach($categories as $category_tip)
                                     <a href="{{ route('categories.show',['category'=> $category_tip->name ]) }}">{{ $category_tip->name }}</a><br>
                                 @endforeach
@@ -25,7 +23,9 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card">
-                            <div class="card-header">タスク：{{$category}}</div>
+                            <div class="card-header">タスク：{{$category}}
+                                <span class="ml-auto"><a href="{{ route('tasks.create') }}">タスク追加</a></span>
+                            </div>
                             <div class="card-body">
                                 <div class="tasks">
                                     <div class="task">
@@ -33,10 +33,10 @@
                                             <thead>
                                                 <tr>
                                                     <th class="id"></th>
-                                                    <th class="content">タスクの内容</th>
+                                                    <th class="content">内容</th>
                                                     <th class="due_time">期限</th>
                                                     <th class="status">状態</th>
-                                                    <th class="time">かかる時間</th>
+                                                    <th class="time">時間</th>
                                                     <th class="icon"></th>
                                                     <th class="icon"></th>
                                                 </tr>
@@ -44,7 +44,9 @@
                                             <tbody>
                                                 @foreach ($tasks as $task)
                                                 <tr>
-                                                    <td>{{ $task->id }}</td>
+                                                    <td>
+                                                        <li></li>
+                                                    </td>
                                                     <td>
                                                         <a href ="{{ route('tasks.show', ['category'=> $category,'task' => $task->id]) }}">{{ $task->content }}</a>
                                                     </td>
@@ -52,7 +54,7 @@
                                                     <td>{{ $task->status }}</td>
                                                     <td>{{ $task->time }}時間</td>
                                                     <td>
-                                                        <a href ="{{ route('tasks.edit', ['category'=> $category, 'task'=> $task->id ]) }}" class="btn btn-success">編集️</a>
+                                                        <a href ="{{ route('tasks.edit', ['task'=> $task->id ]) }}" class="btn btn-success">編集️</a>
                                                     </td>
                                                     <td>
                                                         <form method="post" action="{{ action('TaskController@destory', $task->id) }}" id="delete_{{ $task->id }}" >
