@@ -13,7 +13,7 @@
 <body>
     <div class="category">
         @foreach($categories as $category)
-        <a href="{{ route('categories.show',['category'=> $category->name]) }}" style="text-decoration: none;">
+        <a href="{{ route('categories.show',['category'=> $category->name ]) }}" style="text-decoration: none;">
             <div class="catego-box catego-item1">
                 <div class="catego-text">
                     <h3>{{ $category->name }}</h3>

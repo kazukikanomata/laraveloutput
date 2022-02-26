@@ -17,6 +17,9 @@
                             <div class="card-header">タスク追加・詳細</div>
                             <div class="card-body">
                                 <a href="{{ route('tasks.create') }}">タスク追加</a><br>
+                                @foreach($categories as $category_tip)
+                                    <a href="{{ route('categories.show',['category'=> $category_tip->name ]) }}">{{ $category_tip->name }}</a><br>
+                                @endforeach
                             </div>
                         </div>
                     </div>
