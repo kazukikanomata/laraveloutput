@@ -6,7 +6,6 @@
     <head>
         <meta charset="utf-8">
         <title>トップページ</title>
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
         <div class="text-center">

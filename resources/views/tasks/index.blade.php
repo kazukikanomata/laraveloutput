@@ -36,7 +36,7 @@
                                                     <th class="content">内容</th>
                                                     <th class="due_time">期限</th>
                                                     <th class="status">状態</th>
-                                                    <th class="time">時間</th>
+                                                    <th class="time">h : m</th>
                                                     <th class="icon"></th>
                                                     <th class="icon"></th>
                                                 </tr>

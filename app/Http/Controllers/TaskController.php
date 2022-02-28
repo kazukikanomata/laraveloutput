@@ -52,6 +52,7 @@ class TaskController extends Controller
         // ルートパラメータである$categoryと、クエリパラメータを受け取るための$requestを書きます。
         // リクエストされたものをcategoryに代入し、新しく$categoryをつくる。
         $category = $request->category;
+        // 引数の値と連動しているタスクをモデルより引き出す。
         $task = Task::find($task);
         return view('tasks/show')->with(['category'=> $category,'task' => $task]);
     }

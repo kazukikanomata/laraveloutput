@@ -5,12 +5,12 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>Task</title>
+        <title>タスク追加</title>
     </head>
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-md-10 mt-6">
+                <div class="col-md-6 mx-auto">
                     <div class="card">
                         <div class="card-header">タスクを追加</div>
                         @if($errors->any())
