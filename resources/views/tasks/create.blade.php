@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-md-10 mt-6">
                     <div class="card">
-                        <div class="card-header">タスクを追加する</div>
+                        <div class="card-header">タスクを追加</div>
                         @if($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -40,14 +40,14 @@
                                 <div class="form-group">
                                     <label for="status">状態</label>
                                     <select name="status" class="form-control">
-                                          <option value="未" name="first">未</option>
-                                          <option value="進行中" name="second">進行中</option>
-                                          <option value="完了" name="third">完了</option>
+                                        <option value="未" selected　@if(old('status')=='未') selected  @endif>未</option>
+                                        <option value="進行中" @if(old('status')=='進行中') selected  @endif>進行中</option>
+                                        <option value="完了" @if(old('status')=='完了') selected  @endif>完了</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="time">時間</label>
-                                    <input type="number" name="time" value="{{old('time')}}" placeholder="どれくらいかかる？" class="form-control"/>
+                                    <input type="time" name="time" value="{{old('time')}}" placeholder="どれくらいかかる？" class="form-control"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="category">Category</label>
@@ -58,7 +58,7 @@
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-primary">送信</button>
-                                <a href="{{ route('categories.index') }}" class="btn btn-danger">戻る</a>
+                                <button type="button" onClick="history.back()" class="btn btn-danger">戻る</button>
                             </form>
                         </div>
                     </div>

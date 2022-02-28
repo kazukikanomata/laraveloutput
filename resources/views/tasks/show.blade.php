@@ -34,7 +34,9 @@
                                         <td>{{ $task->status }}</td>
                                         <td>{{ $task->time }}時間</td>
                                         <td>{{ $task->category_id }}</td>
-                                        <td><a href="/tasks/{{ $task->id }}/edit" class="btn btn-success">編集</a></td>
+                                        <td>
+                                            <a href="{{ route('tasks.edit',['task'=> $task->id]) }}" class="btn btn-success">編集</a>
+                                        </td>
                                         <td>
                                             <form method="post" action="{{ action('TaskController@destory', $task->id) }}" id="delete_{{ $task->id }}" >
                                                 @csrf
@@ -42,7 +44,7 @@
                                                 <button type="submit" class="btn btn-danger" onclick="return confirm('本当に削除しますか？');">削除</button>
                                             </form>
                                         </td>
-                                        <button type="submit" onClick="history.back()" class="btn btn-secondary">戻る</button>
+                                        <button type="button" onClick="history.back()" class="btn btn-secondary">戻る</button>
                                     </tr>
                                 </tbody>
                             </table>

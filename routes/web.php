@@ -32,4 +32,3 @@ Route::get('/tasks/{task}/edit','TaskController@edit')->name('tasks.edit');
 Route::put('/tasks/{task}','TaskController@update')->name('tasks.update');
 // タスク削除
 Route::delete('/tasks/{task}', 'TaskController@destory')->name('tasks.destory');
-

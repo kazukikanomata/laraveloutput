@@ -35,10 +35,10 @@ class TaskController extends Controller
         $task->status = $inputs['status'];
         $task->time = $inputs['time'];
         $task->category_id = $inputs['category_id'];
-        //$task->user_id = auth()->user()->id; もしユーザーidがあったら
+        $task->user_id = auth()->user()->id; //もしユーザーidがあったら
         $task->save();
         // Task::create($request->all());
-        return back()->with('message','投稿を保存しました');
+        return back()->with('message','タスクを保存しました');
     }
 
     /**
@@ -64,7 +64,8 @@ class TaskController extends Controller
      */
     public function edit(Request $request,Task $task)
     {
-        return view('tasks/edit')->with(['task' => $task]);
+        $categories = Category::all();
+        return view('tasks/edit')->with(['task' => $task,'categories'=> $categories]);
     }
 
     /**
@@ -76,9 +77,25 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        $input_task = $request['task'];
-        $task->fill($input_task)->save();
-        return redirect()->route('categories.index');
+        //$input_task = $request['task'];
+        //$task->fill($input_task)->save();
+        $inputs = $request->validate([
+            'content'=>'required|max:255',
+            'due_time'=>'required',
+            'status'=>'required',
+            'time'=>'required',
+            'category_id'=>'required',
+            ]);
+        
+        $task->content = $inputs['content'];
+        $task->due_time = $inputs['due_time'];
+        $task->status = $inputs['status'];
+        $task->time = $inputs['time'];
+        $task->category_id = $inputs['category_id'];
+        $task->user_id = auth()->user()->id; //もしユーザーidがあったら
+        $task->update();
+        // Task::create($request->all());
+        return back()->with('message','タスクを更新しました');
     }
     /**
      * Remove the specified resource from storage.
@@ -89,6 +106,6 @@ class TaskController extends Controller
     public function destory(Task $task)
     {
         $task->delete();
-        return back();
+        return back()->with('message','タスクを削除しました');
     }
 }

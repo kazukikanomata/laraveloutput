@@ -23,8 +23,8 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card">
-                            <div class="card-header">タスク：{{$category}}
-                                <span class="ml-auto"><a href="{{ route('tasks.create') }}">タスク追加</a></span>
+                            <div class="card-header">タスク：{{$category}}<br>
+                                <span class="ml-auto"><a href="{{ route('tasks.create') }}">+タスク</a></span>
                             </div>
                             <div class="card-body">
                                 <div class="tasks">
@@ -50,14 +50,14 @@
                                                     <td>
                                                         <a href ="{{ route('tasks.show', ['category'=> $category,'task' => $task->id]) }}">{{ $task->content }}</a>
                                                     </td>
-                                                    <td>{{ $task->due_time }}</td>
+                                                    <td>{{ substr($task->due_time,0,10) }}</td>
                                                     <td>{{ $task->status }}</td>
-                                                    <td>{{ $task->time }}時間</td>
+                                                    <td>{{ substr($task->time,0,5) }}</td>
                                                     <td>
                                                         <a href ="{{ route('tasks.edit', ['task'=> $task->id ]) }}" class="btn btn-success">編集️</a>
                                                     </td>
                                                     <td>
-                                                        <form method="post" action="{{ action('TaskController@destory', $task->id) }}" id="delete_{{ $task->id }}" >
+                                                        <form method="post" action="{{ route('tasks.destory', $task->id) }}" id="delete_{{ $task->id }}" >
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger" onclick="return confirm('本当に削除しますか？');">削除</button>
