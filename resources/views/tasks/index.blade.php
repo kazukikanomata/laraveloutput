@@ -13,18 +13,20 @@
                 <div class="row justify-center-center">
                     <div class="col-md-4">
                         <div class="card">
-                            <div class="card-header">タスク追加・詳細</div>
+                            <div class="card-header">FoCus</div>
                             <div class="card-body">
+                                <h2>タスク追加</h2>
+                                <h2>タスク一覧</h2>
                                 @foreach($categories as $category_tip)
-                                    <a href="{{ route('categories.show',['category'=> $category_tip->name ]) }}">{{ $category_tip->name }}</a><br>
+                                    <h3><a href="{{ route('categories.show',['category'=> $category_tip->name ]) }}">{{ $category_tip->name }}</a></h3><hr>
                                 @endforeach
                             </div>
                         </div>
                     </div>
                     <div class="col-md-8">
                         <div class="card">
-                            <div class="card-header">タスク：{{$category}}<br>
-                                <span class="ml-auto"><a href="{{ route('tasks.create') }}">+タスク</a></span>
+                            <div class="card-header">タスク：{{$category}}
+                                <a href="{{ route('tasks.create') }}" class="btn btn-secondary float-right">+タスク</a>
                             </div>
                             <div class="card-body">
                                 <div class="tasks">
@@ -60,7 +62,7 @@
                                                         <form method="post" action="{{ route('tasks.destory', $task->id) }}" id="delete_{{ $task->id }}" >
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger" onclick="return confirm('本当に削除しますか？');">削除</button>
+                                                            <button type="submit" class="btn btn-danger" onclick="return confirm('本当に削除しますか？');">-タスク</button>
                                                         </form>
                                                     </td>
                                                 </tr>

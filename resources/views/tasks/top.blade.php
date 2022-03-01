@@ -8,7 +8,7 @@
         <title>トップページ</title>
     </head>
     <body>
-        <div class="text-center">
+        <div class="text-center" id="your-element-selector">
             <h2>Focus</h2>
             <a href="{{ route('categories.index') }}" class="btn btn-primary">使ってみる</a>
         </div>
