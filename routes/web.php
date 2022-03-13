@@ -13,7 +13,6 @@
 //　トップ画面
 Route::get('/','TopController@index');
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 // バナーが表示されているページ
