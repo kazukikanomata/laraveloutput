@@ -21,9 +21,10 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
-    {
-        $this->app['request']->server->set('HTTPS', 'on');
-        //
-    }
+    // Cloud9のなごり
+    // public function boot()
+    // {
+    //     $this->app['request']->server->set('HTTPS', 'on');
+    //     //
+    // }
 }

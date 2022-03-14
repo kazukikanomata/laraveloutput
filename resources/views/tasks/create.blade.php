@@ -1,4 +1,4 @@
-@extends('layouts.app')　　　　　　　　　　　　　　　　　　
+@extends('layouts.app')
 
 @section('content')
 <!DOCTYPE HTML>
@@ -46,7 +46,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="time">時間</label>
+                                    <label for="time">h:m</label>
                                     <input type="time" name="time" value="{{old('time')}}" placeholder="どれくらいかかる？" class="form-control"/>
                                 </div>
                                 <div class="form-group">
