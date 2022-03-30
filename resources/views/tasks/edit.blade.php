@@ -14,9 +14,18 @@
                     <div class="card">
                         <div class="card-header">編集画面</div>
                         <div class="card-body">
-                            @if(session('message'))
-                                <div class="alert alert-success">{{ session('message') }}</div>
-                            @endif
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach($errors->all() as $error)
+                                        <li>{{$error}}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        @if(session('message'))
+                            <div class="alert alert-success">{{ session('message') }}</div>
+                        @endif
                             <div class="content">
                                 <form action="{{ route('tasks.update', $task->id) }}" method="POST">
                                     @csrf
@@ -27,7 +36,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="due_time">期限</label>
-                                        <input type="date" name="due_time" placeholder="いつまで？" class="form-control" value="{{old('due_time', $task->due_time)}}"/>
+                                        <input type="date" name="due_time" placeholder="いつまで？" class="form-control" value="{{ old('due_time', $task->due_time)}}"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="status">状態</label>

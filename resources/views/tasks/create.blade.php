@@ -25,7 +25,6 @@
                         @if(session('message'))
                             <div class="alert alert-success">{{ session('message') }}</div>
                         @endif
-                        
                         <div class="card-body">
                             <form action="{{ route('tasks.store') }}" method="POST">
                                 @csrf
