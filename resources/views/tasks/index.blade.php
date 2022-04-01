@@ -15,8 +15,6 @@
                         <div class="card">
                             <div class="card-header">FoCus</div>
                             <div class="card-body">
-                                <!-- <h2>タスク追加</h2>
-                                <h2>タスク一覧</h2> -->
                                 @foreach($categories as $category_tip)
                                     <h3><a href="{{ route('categories.show',['category'=> $category_tip->name ]) }}">{{ $category_tip->name }}</a></h3><hr>
                                 @endforeach
