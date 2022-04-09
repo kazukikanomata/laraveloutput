@@ -34,19 +34,19 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="due_time">期限</label>
-                                    <input type="date" name="due_time" placeholder="いつまで？" class="form-control" value="{{old('due_time')}}"/>
+                                    <input type="date" name="due_time" placeholder="いつまで？" class="form-control"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="status">状態</label>
                                     <select name="status" class="form-control">
-                                        <option value="未" selected　@if(old('status')=='未') selected  @endif>未</option>
-                                        <option value="進行中" @if(old('status')=='進行中') selected  @endif>進行中</option>
-                                        <option value="完了" @if(old('status')=='完了') selected  @endif>完了</option>
+                                        <option value="未">未</option>
+                                        <option value="進行中">進行中</option>
+                                        <option value="完了">完了</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="time">h:m</label>
-                                    <input type="time" name="time" value="{{old('time')}}" placeholder="どれくらいかかる？" class="form-control"/>
+                                    <input type="time" name="time" placeholder="どれくらいかかる？" class="form-control"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="category">Category</label>

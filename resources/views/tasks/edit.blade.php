@@ -41,9 +41,9 @@
                                     <div class="form-group">
                                         <label for="status">状態</label>
                                         <select name="status" class="form-control">
-                                            <option value="未"  @if(old('status')=='未') selected  @endif>未</option>
-                                            <option value="進行中" @if(old('status')=='進行中') selected  @endif>進行中</option>
-                                            <option value="完了" @if(old('status')=='完了') selected  @endif>完了</option>
+                                            <option value="未"  @if(old('status', $task->status =='未')) selected  @endif>未</option>
+                                            <option value="進行中" @if(old('status', $task->status =='進行中')) selected  @endif>進行中</option>
+                                            <option value="完了" @if(old('status', $task->status =='完了')) selected  @endif>完了</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
