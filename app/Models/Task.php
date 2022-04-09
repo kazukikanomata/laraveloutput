@@ -24,4 +24,5 @@ class Task extends Model
         'status',
         'time',
         ];
+    protected $dates = ['due_time'];
 }

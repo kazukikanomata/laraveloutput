@@ -30,7 +30,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <p>タスクの内容</p>
-                                    <textarea name="content" placeholder="内容" class="form-control">{{old('content')}}</textarea>
+                                    <textarea name="content" placeholder="内容" class="form-control"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="due_time">期限</label>

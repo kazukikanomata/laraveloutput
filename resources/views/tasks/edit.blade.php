@@ -32,23 +32,23 @@
                                     @method('PUT')
                                     <div class="form-group">
                                         <label for="content" class="my-2">タスクの内容</label>
-                                        <textarea name="content" placeholder="内容" class="form-control">{{old('content', $task->content)}}</textarea>
+                                        <textarea name="content" placeholder="内容" class="form-control">{{ old('content', $task->content) }}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="due_time">期限</label>
-                                        <input type="date" name="due_time" placeholder="いつまで？" class="form-control" value="{{ old('due_time', $task->due_time)}}"/>
+                                        <input type="date" name="due_time" placeholder="いつまで？" class="form-control" value="{{ old('due_time', $task->due_time->format('Y-m-d')) }}"/>                                        
                                     </div>
                                     <div class="form-group">
                                         <label for="status">状態</label>
                                         <select name="status" class="form-control">
-                                            <option value="未" selected　@if(old('status')=='未') selected  @endif>未</option>
+                                            <option value="未"  @if(old('status')=='未') selected  @endif>未</option>
                                             <option value="進行中" @if(old('status')=='進行中') selected  @endif>進行中</option>
                                             <option value="完了" @if(old('status')=='完了') selected  @endif>完了</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="time">時 : 分</label>
-                                        <input type="time" name="time" value="{{old('time', $task->time)}}" placeholder="どれくらいかかる？" class="form-control"/>
+                                        <input type="time" name="time" value="{{ old('time', $task->time) }}" placeholder="どれくらいかかる？" class="form-control"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="category">Category</label>
