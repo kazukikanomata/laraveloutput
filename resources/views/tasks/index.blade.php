@@ -11,7 +11,7 @@
         <main>
             <div class="container">
                 <div class="row justify-center-center">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="card">
                             <div class="card-header">FoCus</div>
                             <div class="card-body">
@@ -21,7 +21,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-9">
                         <div class="card">
                             <div class="card-header">タスク：{{$category}}
                                 <a href="{{ route('tasks.create') }}" class="btn btn-secondary float-right">+タスク</a>

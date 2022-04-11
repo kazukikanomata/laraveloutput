@@ -40,7 +40,7 @@
                                             <form method="post" action="{{ action('TaskController@destory', $task->id) }}" id="delete_{{ $task->id }}" >
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger" onclick="return confirm('本当に削除しますか？');">削除</button>
+                                                <button type="submit" class="btn btn-danger" onclick="return confirm('本当に削除しますか？');">-タスク</button>
                                             </form>
                                         </td>
                                         <button type="button" onClick="history.back()" class="btn btn-secondary my-2">戻る</button>
@@ -53,4 +53,5 @@
             </div>
         </div>
     </body>
-    @endsection
+</html>
+@endsection
