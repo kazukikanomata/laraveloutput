@@ -61,7 +61,7 @@
                                                         <form method="post" action="{{ route('tasks.destory', $task->id) }}" id="delete_{{ $task->id }}" >
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="btn w-64 rounded-full" onclick="return confirm('本当に削除しますか？');">-タスク</button>
+                                                            <button type="submit" class="btn btn-ghost" onclick="return confirm('本当に削除しますか？');">-タスク</button>
                                                         </form>
                                                     </td>
                                                 </tr>
