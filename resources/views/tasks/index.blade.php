@@ -6,6 +6,7 @@
     <head>
         <meta charset="utf-8">
         <title>テーブル一覧</title>
+        <link href="/dist/output.css" rel="stylesheet" />
     </head>
     <body>
         <main>
@@ -14,9 +15,9 @@
                     <div class="col-md-3">
                         <div class="card">
                             <div class="card-header">FoCus</div>
-                            <div class="card-body">
+                            <div class="tabs tabs-boxed">
                                 @foreach($categories as $category_tip)
-                                    <h3><a href="{{ route('categories.show',['category'=> $category_tip->name ]) }}">{{ $category_tip->name }}</a></h3><hr>
+                                    <h3><a class="tab" href="{{ route('categories.show',['category'=> $category_tip->name ]) }}">{{ $category_tip->name }}</a></h3><hr>
                                 @endforeach
                             </div>
                         </div>
@@ -60,7 +61,7 @@
                                                         <form method="post" action="{{ route('tasks.destory', $task->id) }}" id="delete_{{ $task->id }}" >
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger" onclick="return confirm('本当に削除しますか？');">-タスク</button>
+                                                            <button type="submit" class="btn w-64 rounded-full" onclick="return confirm('本当に削除しますか？');">-タスク</button>
                                                         </form>
                                                     </td>
                                                 </tr>
