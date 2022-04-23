@@ -20,14 +20,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware'=>'auth'], function(){
 
     Route::get('/categories','CategoryController@index')->name('categories.index');
-    // 選択されたカテゴリーが表示されているページ
-    Route::get('/categories/{category}','CategoryController@show')->name('categories.show');
     // タスク作成画面
     Route::get('/tasks/create','TaskController@create')->name('tasks.create');
     // タスク保存画面
     Route::post('/tasks','TaskController@store')->name('tasks.store');
     //　選択されたカテゴリーの個別詳細ページ
-    Route::get('/categories/{category}/tasks/{task}','TaskController@show')->name('tasks.show');
+    Route::get('/categories/tasks/{task}','TaskController@show')->name('tasks.show');
     // タスク編集
     Route::get('/tasks/{task}/edit','TaskController@edit')->name('tasks.edit');
     // タスク更新

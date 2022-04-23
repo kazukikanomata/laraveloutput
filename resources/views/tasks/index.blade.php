@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <title>テーブル一覧</title>
-        <link href="/dist/output.css" rel="stylesheet" />
+        <link href="/dist/output.css" rel="stylesheet"/>
     </head>
     <body>
         <main>
@@ -16,15 +16,15 @@
                         <div class="card">
                             <div class="card-header">FoCus</div>
                             <div class="tabs tabs-boxed">
-                                @foreach($categories as $category_tip)
-                                    <h3><a class="tab" href="{{ route('categories.show',['category'=> $category_tip->name ]) }}">{{ $category_tip->name }}</a></h3><hr>
+                                @foreach($categories as $category)
+                                    <h3><a class="tab" href="">{{ $category->name }}</a></h3><hr>
                                 @endforeach
                             </div>
                         </div>
                     </div>
                     <div class="col-md-9">
                         <div class="card">
-                            <div class="card-header">タスク：{{$category}}
+                            <div class="card-header">タスク
                                 <a href="{{ route('tasks.create') }}" class="btn btn-secondary float-right">+タスク</a>
                             </div>
                             <div class="card-body">
@@ -49,7 +49,7 @@
                                                         <li></li>
                                                     </td>
                                                     <td>
-                                                        <a href ="{{ route('tasks.show', ['category'=> $category,'task' => $task->id]) }}">{{ $task->content }}</a>
+                                                        <a href ="{{ route('tasks.show', ['task' => $task->id]) }}">{{ $task->content }}</a>
                                                     </td>
                                                     <td>{{ substr($task->due_time,0,10) }}</td>
                                                     <td>{{ $task->status }}</td>
