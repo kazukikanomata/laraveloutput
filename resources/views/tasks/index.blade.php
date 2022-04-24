@@ -12,21 +12,28 @@
         <main>
             <div class="container">
                 <div class="row justify-center-center">
-                    <div class="col-md-3">
+                    <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">FoCus</div>
-                            <div class="tabs tabs-boxed">
-                                @foreach($categories as $category)
-                                    <h3><a class="tab" href="">{{ $category->name }}</a></h3><hr>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="card">
-                            <div class="card-header">タスク
-                                <a href="{{ route('tasks.create') }}" class="btn btn-secondary float-right">+タスク</a>
-                            </div>
+                            <div class="card-header">
+<!-- ここからが追加ゾーン -->
+<div class="navbar bg-base-300 rounded-box">
+    <a class="btn btn-ghost normal-case text-xl">FoCus</a>
+    <div class="flex justify-end flex-1 px-2">
+        <div class="flex items-stretch">
+            <a href="{{ route('tasks.create') }}" class="btn btn-secondary mx-2">+タスク</a>
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn rounded-btn">カテゴリー</label>
+                <ul tabindex="0" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+                    @foreach($categories as $category)
+                    <li>
+                        <a class="" route="">{{ $category->name }}</a>
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
                             <div class="card-body">
                                 <div class="tasks">
                                     <div class="task">
