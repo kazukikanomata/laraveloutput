@@ -6,6 +6,7 @@
     <head>
         <meta charset="utf-8">
         <title>タスク編集</title>
+        <link href="/dist/output.css" rel="stylesheet"/>
     </head>
     <body>
         <div class="container">
@@ -32,27 +33,27 @@
                                     @method('PUT')
                                     <div class="form-group">
                                         <label for="content" class="my-2">タスクの内容</label>
-                                        <textarea name="content" placeholder="内容" class="form-control">{{ old('content', $task->content) }}</textarea>
+                                        <textarea class="textarea textarea-primary form-control" name="content" placeholder="内容">{{ old('content', $task->content) }}</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="due_time">期限</label>
-                                        <input type="date" name="due_time" placeholder="いつまで？" class="form-control" value="{{ old('due_time', $task->due_time->format('Y-m-d')) }}"/>                                        
+                                        <label for="due_time">期限</label><br>
+                                        <input type="date" name="due_time" placeholder="いつまで？" class="input input-bordered input-primary w-full max-w-xs" value="{{ old('due_time', $task->due_time->format('Y-m-d')) }}">                                        
                                     </div>
                                     <div class="form-group">
-                                        <label for="status">状態</label>
-                                        <select name="status" class="form-control">
+                                        <label for="status">状態</label><br>
+                                        <select name="status" class="select select-primary w-full max-w-xs form-control">
                                             <option value="未"  @if(old('status', $task->status =='未')) selected  @endif>未</option>
                                             <option value="進行中" @if(old('status', $task->status =='進行中')) selected  @endif>進行中</option>
                                             <option value="完了" @if(old('status', $task->status =='完了')) selected  @endif>完了</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="time">時 : 分</label>
-                                        <input type="time" name="time" value="{{ old('time', $task->time) }}" placeholder="どれくらいかかる？" class="form-control"/>
+                                        <label for="time">時 : 分</label><br>
+                                        <input type="time" name="time" placeholder="どれくらいかかる？" class="input input-bordered input-primary w-full max-w-xs" value="{{ old('time', $task->time) }}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="category">Category</label>
-                                        <select name="category_id" class="form-control">
+                                        <label for="category">Category</label><br>
+                                        <select name="category_id" class="select select-primary w-full max-w-xs form-control">
                                             @foreach($categories as $category)
                                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                                             @endforeach

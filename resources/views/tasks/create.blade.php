@@ -29,28 +29,28 @@
                             <form action="{{ route('tasks.store') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <p>タスクの内容</p>
-                                    <textarea name="content" placeholder="内容" class="form-control"></textarea>
+                                    <label for="content" class="my-2">タスクの内容</label>
+                                    <textarea class="textarea textarea-primary form-control" name="content" placeholder="内容"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="due_time">期限</label>
-                                    <input type="date" name="due_time" placeholder="いつまで？" class="form-control"/>
+                                    <label for="due_time">期限</label><br>
+                                    <input type="date" name="due_time" placeholder="いつまで？" class="input input-bordered input-primary w-full max-w-xs">
                                 </div>
                                 <div class="form-group">
-                                    <label for="status">状態</label>
-                                    <select name="status" class="form-control">
+                                    <label for="status">状態</label><br>
+                                    <select name="status" class="select select-primary w-full max-w-xs form-control">
                                         <option value="未">未</option>
                                         <option value="進行中">進行中</option>
                                         <option value="完了">完了</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="time">h:m</label>
-                                    <input type="time" name="time" placeholder="どれくらいかかる？" class="form-control"/>
+                                    <label for="time">h:m</label><br>
+                                    <input type="time" name="time" placeholder="どれくらいかかる？" class="input input-bordered input-primary w-full max-w-xs">
                                 </div>
                                 <div class="form-group">
-                                    <label for="category">Category</label>
-                                    <select name="category_id" class="form-control">
+                                    <label for="category">Category</label><br>
+                                    <select name="category_id" class="select select-primary w-full max-w-xs form-control">
                                         @foreach($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach

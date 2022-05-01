@@ -32,7 +32,7 @@
                                         <td>{{ substr($task->due_time,0,10) }}</td>
                                         <td>{{ $task->status }}</td>
                                         <td>{{ substr($task->time,0,5) }}</td>
-                                        <td>{{ $category }}</td>
+                                        <td>{{ $task->category_id }}</td>
                                         <td>
                                             <a href="{{ route('tasks.edit',['task'=> $task->id]) }}" class="btn btn-success">編集</a>
                                         </td>
