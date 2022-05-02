@@ -24,9 +24,6 @@
                                 </ul>
                             </div>
                         @endif
-                        @if(session('message'))
-                            <div class="alert alert-success">{{ session('message') }}</div>
-                        @endif
                             <div class="content">
                                 <form action="{{ route('tasks.update', $task->id) }}" method="POST">
                                     @csrf

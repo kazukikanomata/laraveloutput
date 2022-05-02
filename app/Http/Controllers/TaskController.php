@@ -95,7 +95,7 @@ class TaskController extends Controller
         $task->user_id = auth()->user()->id; //もしユーザーidがあったら
         $task->update();
         // Task::create($request->all());
-        return back()->with('message','タスクを更新しました');
+        return redirect('/categories')->with('message','タスクを更新しました');
     }
     /**
      * Remove the specified resource from storage.

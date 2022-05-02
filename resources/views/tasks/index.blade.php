@@ -18,20 +18,26 @@
                             <div class="flex items-stretch">
                                 <a href="{{ route('tasks.create') }}" class="btn btn-primary mx-2">+タスク</a>
                                 <div class="dropdown dropdown-end">
-                                    <label tabindex="0" class="btn rounded-btn">カテゴリー一覧</label>
+                                    <label tabindex="0" class="btn rounded-btn">カテゴリー</label>
                                     <ul tabindex="0" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
                                         <li>
                                             <a href="{{ route('categories.index')}}">All</a>
                                         </li>
-                                        @foreach($categories as $category)
+                                        @foreach($categories as $id => $name)
                                         <li>
-                                            <a class="" href="{{ route('categories.index',['id'=> $category->id]) }}">{{ $category->name }}</a>
+                                            <a class="" href="{{ route('categories.index',['category_id'=> $id]) }}">{{ $name }}</a>
                                         </li>
                                         @endforeach
                                     </ul>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    @if(session('message'))
+                        <div class="alert alert-success">{{ session('message') }}</div>
+                    @endif
+                    <div class="mt-4 mb-4">
+                        <p>{{ $tasks->total() }}件が見つかりました。</p>
                     </div>
                     <div class="overflow-x-auto">
                         <table class="table w-full my-2">
@@ -72,6 +78,9 @@
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
+                    <div class="d-flex justify-content-center mb-5">
+                        {{ $tasks->appends(['category_id' => $category_id])->links() }}
                     </div>
                 </div>
             </div>

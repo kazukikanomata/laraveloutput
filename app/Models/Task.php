@@ -15,6 +15,15 @@ class Task extends Model
     {
     return $this->belongsTo('App\Models\Category');
     }
+    // 任意のカテゴリを含むものとする（ローカル）スコープ
+    public function scopeCategoryAt($query, $category_id)
+    {
+    if (empty($category_id)) {
+        return;
+    }
+ 
+    return $query->where('category_id', $category_id);
+    }
     
     protected $fillable = [
         'user_id',
