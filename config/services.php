@@ -29,5 +29,10 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'line'=> [
+        'client_id'=>env('1657118232'),
+        'client_secret' =>env('9097d499cac03c406d4991001429c3aa'),
+        'redirect'=>env('https://kazu-focus.xyz/callback'),
+    ],
 
 ];

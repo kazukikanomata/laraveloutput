@@ -16,6 +16,7 @@
                     <h1 class="mb-5 text-5xl font-bold">Focus</h1>
                     <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     <a href="{{ route('categories.index') }}" class="btn btn-primary">使ってみる</a>
+                    <a href="{{ route('linelogin')}}">LINEログイン</a>
                 </div>
             </div>
         </div>

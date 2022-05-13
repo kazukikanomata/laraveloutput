@@ -16,8 +16,12 @@ Route::get('/','TopController@index');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 // バナーが表示されているページ
 Route::group(['middleware'=>'auth'], function(){
+
+    
+    
 
     Route::get('/categories','CategoryController@index')->name('categories.index');
     // タスク作成画面
@@ -33,3 +37,6 @@ Route::group(['middleware'=>'auth'], function(){
     // タスク削除
     Route::delete('/tasks/{task}', 'TaskController@destory')->name('tasks.destory');
 });
+
+Route::get('/linelogin', 'LineLoginController@lineLogin')->name('linelogin');
+Route::get('/callback', 'LineLoginController@callback')->name('callback');
