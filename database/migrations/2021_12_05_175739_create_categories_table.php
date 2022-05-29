@@ -13,9 +13,14 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
+        // 対象の存在をしていれば、処理を中断する
+        if(Schema::hasTable('categories')){
+            return;
+        }
+        // 対象のテーブルを作成する
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name' , 5);
+            $table->string('name' , 5)->nullable();
             $table->timestamps();
         });
     }

@@ -34,4 +34,6 @@ class Task extends Model
         'time',
         ];
     protected $dates = ['due_time'];
+    protected $table = 'tasks';
+    
 }

@@ -20,9 +20,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 // バナーが表示されているページ
 Route::group(['middleware'=>'auth'], function(){
 
-    
-    
-
     Route::get('/categories','CategoryController@index')->name('categories.index');
     // タスク作成画面
     Route::get('/tasks/create','TaskController@create')->name('tasks.create');

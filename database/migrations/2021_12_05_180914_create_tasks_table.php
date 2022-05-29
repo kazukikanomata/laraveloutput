@@ -13,6 +13,11 @@ class CreateTasksTable extends Migration
      */
     public function up()
     {
+        // 対象の存在をしていれば、処理を中断する
+        if(Schema::hasTable('tasks')){
+            return;
+        }
+        // 対象のテーブルを作成する
         Schema::create('tasks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
