@@ -6,10 +6,6 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
-                <a href="{{ route('social_login.redirect', 'line') }}">
-                    login<img style="height:50px" src="/images/LINE_APP.png">
-                </a>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

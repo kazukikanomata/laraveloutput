@@ -8,6 +8,7 @@ class Category extends Model
 {
     public function getLists()
     {
+        // id と nameのキーのみを取得する
         $categories = Category::orderBy('id','asc')->pluck('name','id');
         return $categories;
     }

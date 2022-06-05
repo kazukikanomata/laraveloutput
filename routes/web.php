@@ -13,12 +13,12 @@
 //　トップ画面
 Route::get('/','App\HTTP\Controllers\TopController@index');
 
-Auth::routes();
 Route::get('/home', 'App\HTTP\Controllers\HomeController@index')->name('home');
 
 
 // バナーが表示されているページ
-Route::group(['middleware'=>'auth'], function(){
+
+
 
     Route::get('/categories','App\HTTP\Controllers\CategoryController@index')->name('categories.index');
     // タスク作成画面
@@ -33,7 +33,7 @@ Route::group(['middleware'=>'auth'], function(){
     Route::put('/tasks/{task}','App\HTTP\Controllers\TaskController@update')->name('tasks.update');
     // タスク削除
     Route::delete('/tasks/{task}', 'App\HTTP\Controllers\TaskController@destory')->name('tasks.destory');
-});
+
 
 // ソーシャル・ログイン
 Route::prefix('login/{provider}')->where(['provider' => '(line|github)'])->group(function(){
